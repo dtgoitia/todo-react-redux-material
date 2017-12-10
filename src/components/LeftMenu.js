@@ -2,7 +2,6 @@ import React from 'react';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import MenuItemChangeTheme from './MenuItemChangeTheme'
-import Toggle from 'material-ui/Toggle';
 
 export default class LeftMenu extends React.Component {
   constructor(props) {

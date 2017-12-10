@@ -1,18 +1,19 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Todo from './Todo'
+import React from 'react';
+import PropTypes from 'prop-types';
+import {List} from 'material-ui/List';
+import TodoListItem from './TodoListItem';
 
 const TodoList = ({ todos, onTodoClick }) => (
-  <ul>
+  <List>
     {todos.map(todo =>
-      <Todo
+      <TodoListItem
         key={todo.id}
         {...todo}
         onClick={() => onTodoClick(todo.id)}
       />
     )}
-  </ul>
-)
+  </List>
+);
 
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(PropTypes.shape({
@@ -21,6 +22,6 @@ TodoList.propTypes = {
     text: PropTypes.string.isRequired
   }).isRequired).isRequired,
   onTodoClick: PropTypes.func.isRequired
-}
+};
 
-export default TodoList
+export default TodoList;

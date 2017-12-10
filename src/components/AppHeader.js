@@ -1,20 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import AppBar from 'material-ui/AppBar';
 
-class AppHeader extends React.Component {
-  constructor(props){
-    super(props);
-  }
+const AppHeader = ({handleDrawer}) => (
+  <AppBar
+    title="TO-duh"
+    iconClassNameRight="muidocs-icon-navigation-expand-more"
+    onLeftIconButtonClick={handleDrawer}
+    onTitleClick={handleDrawer}
+    onRightIconButtonClick={handleDrawer}
+  />
+);
 
-  render(){
-    return(
-      <AppBar
-        title="TO-duh"
-        iconClassNameRight="muidocs-icon-navigation-expand-more"
-        onTitleClick={this.props.handleDrawer}
-      />
-    );
-  }
-}
+AppHeader.propTypes = {
+  handleDrawer: PropTypes.func.isRequired
+};
 
 export default AppHeader;
